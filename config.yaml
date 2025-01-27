@@ -39,7 +39,7 @@ social:
 
 # GitHub Configuration
 github:
-  repo_url: https://github.com/yourusername/grog-cms
+  repo_url: https://github.com/GrogSpace/GrogCMS
   edit_uri: edit/main/pages/
 
 # Contact Form
