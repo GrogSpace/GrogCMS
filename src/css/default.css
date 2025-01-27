@@ -2,5 +2,54 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Add any additional default styles here */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header,
+nav,
+footer {
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+aside {
+  width: 250px;
+  padding: 1rem;
+  background-color: #f1f3f5;
+}
+
+/* Navigation styles */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
 
