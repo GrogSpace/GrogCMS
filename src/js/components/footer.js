@@ -1,4 +1,4 @@
-import config from "../../config.yaml"
+import config from "../../../config.yaml"
 
 export function renderFooter() {
   const footer = document.getElementById("footer")
