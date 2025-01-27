@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grog CMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="src/css/default.css">
     <link rel="stylesheet" href="src/css/custom.css">
+    <style>
+        .error { color: red; font-weight: bold; }
+    </style>
 </head>
-<body>
-    <div id="app"></div>
+<body class="bg-white text-gray-900">
+    <div id="app" class="min-h-screen flex flex-col">
+        <h1 class="text-2xl font-bold mb-4">Welcome to Grog CMS</h1>
+        <p class="mb-4">If you're seeing this message, the page is loading...</p>
+    </div>
+    <div id="error" class="error"></div>
     <script src="src/js/app.js" type="module"></script>
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            document.getElementById('error').textContent = 'Error: ' + message;
+        };
+    </script>
 </body>
 </html>
 

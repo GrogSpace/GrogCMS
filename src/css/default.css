@@ -2,54 +2,38 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Custom styles */
 body {
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-  color: #333;
+  @apply font-sans text-gray-900 leading-normal;
 }
 
 .container {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  @apply flex max-w-7xl mx-auto px-4;
 }
 
 header,
 nav,
 footer {
-  padding: 1rem;
-  background-color: #f8f9fa;
+  @apply p-4 bg-gray-100;
 }
 
 main {
-  flex: 1;
-  padding: 2rem;
+  @apply flex-1 p-8;
 }
 
 aside {
-  width: 250px;
-  padding: 1rem;
-  background-color: #f1f3f5;
+  @apply w-64 p-4 bg-gray-50;
 }
 
-/* Navigation styles */
 nav ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+  @apply flex list-none p-0;
 }
 
 nav ul li {
-  margin-right: 1rem;
+  @apply mr-4;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
+  @apply text-blue-600 no-underline hover:underline;
 }
 
