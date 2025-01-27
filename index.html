@@ -7,12 +7,24 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="src/css/default.css">
     <link rel="stylesheet" href="src/css/custom.css">
-    <!-- ... other head content ... -->
 </head>
 <body>
-    <!-- ... body content ... -->
+    <div id="app"></div>
+    <div id="debug" class="mt-4 p-4 bg-gray-100 rounded">
+        <h2 class="text-lg font-semibold mb-2">Debug Information:</h2>
+        <pre id="debugInfo" class="whitespace-pre-wrap"></pre>
+    </div>
+    <div id="error" class="error mt-4"></div>
     <script src="src/js/app.js" type="module"></script>
-    <!-- ... other scripts ... -->
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            const errorElement = document.getElementById('error');
+            if (errorElement) {
+                errorElement.textContent = `Error: ${message}\nSource: ${source}\nLine: ${lineno}\nColumn: ${colno}`;
+            }
+        };
+        document.getElementById('debugInfo').textContent = `Page loaded at: ${new Date().toISOString()}`;
+    </script>
 </body>
 </html>
 
