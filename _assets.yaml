@@ -1,0 +1,19 @@
+# Asset Configuration
+images:
+  - name: logo
+    path: /images/logo.png
+  - name: favicon
+    path: /favicon.ico
+
+downloads:
+  - name: User Guide
+    path: /downloads/user-guide.pdf
+  - name: Sample Data
+    path: /downloads/sample-data.csv
+
+attachments:
+  - name: Terms of Service
+    path: /attachments/terms-of-service.pdf
+  - name: Privacy Policy
+    path: /attachments/privacy-policy.pdf
+
