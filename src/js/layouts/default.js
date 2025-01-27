@@ -3,8 +3,15 @@ import { renderNavbar } from "../components/navbar.js"
 import { renderSidebar } from "../components/sidebar.js"
 import { renderFooter } from "../components/footer.js"
 
+function updateDebugInfo(message) {
+  const debugInfo = document.getElementById("debugInfo")
+  if (debugInfo) {
+    debugInfo.textContent += `\n${new Date().toISOString()}: ${message}`
+  }
+}
+
 export function renderLayout(appElement) {
-  console.log("renderLayout function called")
+  updateDebugInfo("renderLayout function called")
   appElement.innerHTML = `
         <header id="header" class="bg-gray-100 p-4"></header>
         <nav id="navbar" class="bg-gray-200 p-4"></nav>
@@ -18,9 +25,22 @@ export function renderLayout(appElement) {
         <footer id="footer" class="bg-gray-100 p-4"></footer>
     `
 
-  renderHeader()
-  renderNavbar()
-  renderSidebar()
-  renderFooter()
+  updateDebugInfo("Layout HTML inserted")
+
+  try {
+    renderHeader()
+    updateDebugInfo("Header rendered")
+    renderNavbar()
+    updateDebugInfo("Navbar rendered")
+    renderSidebar()
+    updateDebugInfo("Sidebar rendered")
+    renderFooter()
+    updateDebugInfo("Footer rendered")
+  } catch (error) {
+    updateDebugInfo(`Error in renderLayout: ${error.message}`)
+    console.error("Error in renderLayout:", error)
+  }
 }
+
+updateDebugInfo("default.js layout file loaded")
 
