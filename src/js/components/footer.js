@@ -1,5 +1,3 @@
-import config from "../../../config.yaml"
-
 export function renderFooter() {
   const footer = document.getElementById("footer")
   if (footer) {
